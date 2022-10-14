@@ -1,0 +1,15 @@
+{% extends 'step1/base.html' %}
+
+{% block content %}
+<h1>{{vuz_from_db.title}}</h1>
+<a href="{{vuz_from_db.get_absolute_url }}add"><p>Добавить персональ</p></a>
+<ul>
+    {% for p in persons %}
+    <li>
+       <h2>{{p.name}}</h2>
+        <p>{{p.wiki}}</p>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

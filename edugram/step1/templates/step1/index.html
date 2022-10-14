@@ -1,0 +1,96 @@
+{% extends 'step1/base.html' %}
+
+{% block content %}
+  <style>
+   .parent {
+    margin-left: 5%;
+   }
+
+  </style>
+<h1 class="parent">{{title}}</h1>
+<table border="1">
+    <tr>
+        <th>
+            <p>Название вуза</p>
+        </th>
+        <th>
+            <p>Ссылка на вуз</p>
+        </th>
+        <th>
+            <p>Кол-во просмотров</p>
+        </th>
+        <th>
+            <p>Кол-во гостей</p>
+        </th>
+        <th>
+            <p>VK</p>
+        </th>
+        <th>
+            <p>Кол-во подписчиков VK</p>
+        </th>
+        <th>
+            <p>Кол-во видео VK</p>
+        </th>
+        <th>
+            <p>YT</p>
+        </th>
+        <th>
+            <p>Кол-во подписчиков YT</p>
+        </th>
+        <th>
+            <p>Кол-во просмотров YT</p>
+        </th>
+        <th>
+            <p>TG</p>
+        </th>
+        <th>
+            <p>Кол-во подписчиков TG</p>
+        </th>
+
+
+
+    </tr>
+{% for p in posts %}
+    <tr>
+        <th>
+            <a href="{{ p.get_absolute_url }}">
+            <h4>{{p.title}}</h4>
+            </a>
+        </th>
+        <th width="100px">
+            <p>{{p.url}}</p>
+        </th>
+        <th width="100px">
+            <p>{{p.count_views}}</p>
+        </th>
+        <th width="100px">
+            <p>{{p.count_guests}}</p>
+        </th>
+        <th>
+            <p>{{p.VK}}</p>
+        </th>
+        <th>
+            <p>{{p.VK_Subs}}</p>
+        </th>
+        <th>
+            <p>{{p.VK_Video}}</p>
+        </th>
+        <th>
+            <p>{{p.YT}}</p>
+        </th>
+        <th>
+            <p>{{p.YT_Subs}}</p>
+        </th>
+        <th>
+            <p>{{p.YT_Views}}</p>
+        </th>
+        <th>
+            <p>{{p.TG}}</p>
+        </th>
+        <th>
+            <p>{{p.TG_Subs}}</p>
+        </th>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}
